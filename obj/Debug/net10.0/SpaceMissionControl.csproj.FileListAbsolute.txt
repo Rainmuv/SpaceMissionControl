@@ -1,0 +1,15 @@
+D:\workProgram\sisharp\SpaceMissionControl\bin\Debug\net10.0\SpaceMissionControl.exe
+D:\workProgram\sisharp\SpaceMissionControl\bin\Debug\net10.0\SpaceMissionControl.deps.json
+D:\workProgram\sisharp\SpaceMissionControl\bin\Debug\net10.0\SpaceMissionControl.runtimeconfig.json
+D:\workProgram\sisharp\SpaceMissionControl\bin\Debug\net10.0\SpaceMissionControl.dll
+D:\workProgram\sisharp\SpaceMissionControl\bin\Debug\net10.0\SpaceMissionControl.pdb
+D:\workProgram\sisharp\SpaceMissionControl\obj\Debug\net10.0\SpaceMissionControl.GeneratedMSBuildEditorConfig.editorconfig
+D:\workProgram\sisharp\SpaceMissionControl\obj\Debug\net10.0\SpaceMissionControl.AssemblyInfoInputs.cache
+D:\workProgram\sisharp\SpaceMissionControl\obj\Debug\net10.0\SpaceMissionControl.AssemblyInfo.cs
+D:\workProgram\sisharp\SpaceMissionControl\obj\Debug\net10.0\SpaceMissionControl.csproj.CoreCompileInputs.cache
+D:\workProgram\sisharp\SpaceMissionControl\obj\Debug\net10.0\SpaceMissionControl.sourcelink.json
+D:\workProgram\sisharp\SpaceMissionControl\obj\Debug\net10.0\SpaceMissionControl.dll
+D:\workProgram\sisharp\SpaceMissionControl\obj\Debug\net10.0\refint\SpaceMissionControl.dll
+D:\workProgram\sisharp\SpaceMissionControl\obj\Debug\net10.0\SpaceMissionControl.pdb
+D:\workProgram\sisharp\SpaceMissionControl\obj\Debug\net10.0\SpaceMissionControl.genruntimeconfig.cache
+D:\workProgram\sisharp\SpaceMissionControl\obj\Debug\net10.0\ref\SpaceMissionControl.dll

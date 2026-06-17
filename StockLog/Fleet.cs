@@ -1,6 +1,6 @@
 namespace StockLog
 {
-    class Fleet<T>
+    class Fleet<T> where T: Probe
     {
         List<T> allFleet = new List<T> {} ;
         public void Add(T item)

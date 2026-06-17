@@ -21,7 +21,6 @@ class Program
             probe.StatusChanged += alerts.OnStatusChanged;
         }
         
-        startMission.Run();
-
+        startMission.Run(fleet);
     }
 }

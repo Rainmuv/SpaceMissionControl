@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpaceMissionControl")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca855e1bbaf82270beb1cadeb59699745428831a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45caf6edcddd8f2c409aa1eba69112ffe049006b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpaceMissionControl")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpaceMissionControl")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

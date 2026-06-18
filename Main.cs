@@ -5,6 +5,9 @@ class Program
     public static void Main()
     {
         var fleet = new Fleet<Probe>();
+        Func<Probe, int> topUp   = p => 100 - p.Fuel;  // долить до максимума
+        Func<Probe, int> fixed30 = _ => 30;             // фиксированно 30 единиц
+
 
         fleet.Add(new Probe("Voyager-X",  "Mars",    0));
         fleet.Add(new Probe("Artemis-3",  "Venus",   5));
@@ -21,6 +24,7 @@ class Program
             probe.StatusChanged += alerts.OnStatusChanged;
         }
         
-        startMission.Run(fleet);
+        startMission.Run(fleet, topUp, fixed30);
+        logger.Cons();
     }
 }

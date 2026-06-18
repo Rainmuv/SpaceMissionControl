@@ -2,12 +2,24 @@ namespace System
 {
     class MissionLogger
     {
-        List<string> logActive = new List<string> {};
-        List<int> logFuel = new List<int> {};
+        public static int count {get; set; }= 1;
+        public static int countLog {get; set; }= 1;
+        public static Dictionary<string, string> LogOnFleet = new Dictionary<string, string> {};
+
+
         public void OnStatusChanged(Probe item)
         {
-           logActive.Add(item.Status);
-           logFuel.Add(item.Fuel);  
+            LogOnFleet.Add($"{item.Name}{countLog++}", $"Status: {item.Status} - Fuel: {item.Fuel}");
+        }
+        public void Cons()
+        {
+
+            foreach (var value in LogOnFleet)
+            {
+                Console.WriteLine($"{value.Key}: {value.Value}");
+            }
+        
+            
         }
     }
 }

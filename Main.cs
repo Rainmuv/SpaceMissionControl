@@ -24,7 +24,7 @@ class Program
             probe.StatusChanged += alerts.OnStatusChanged;
         }
         
-        startMission.Run(fleet, topUp, fixed30);
-        logger.Cons();
+        startMission.Run(ref fleet, topUp, fixed30);
+        // logger.Cons();
     }
 }

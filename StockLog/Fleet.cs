@@ -12,5 +12,17 @@ namespace StockLog
         {
             return allFleet;
         }
+        public void Filter(List<T> all)
+        {   
+            Console.WriteLine(" \n WARNING! \n");
+            foreach (var item in all)
+            {
+                if(item.Status == "LowFuel")
+                {
+                    Console.WriteLine($"{item.Name} need fuel!");
+                }
+            }
+            Console.WriteLine("\n");
+        }
     }
 }

@@ -4,18 +4,28 @@ namespace System
     class MissionControl
     {
 
-        public void Run(Fleet<Probe> fleet,Func<Probe, int> topUp, Func<Probe, int> fixed30)
+        public void Run(ref Fleet<Probe> fleet,Func<Probe, int> topUp, Func<Probe, int> fixed30)
         {
+            
             for (int i = 0; i < 5; i++)
-            {   
+            { 
                 bool statusChoice = true;
                 while(statusChoice)
                 {
+                    bool statusWarning = false;
                     Console.WriteLine("[------------Space-Mission------------]");
                     Console.WriteLine("Satellite status:");
                     foreach (var item in fleet.GetAll())
                     {
                         Console.WriteLine($"{item.Name} - Fuel: {item.Fuel}");
+                        if(item.Status == "LowFuel")
+                        {
+                            statusWarning = true;
+                        }
+                    }
+                    if(statusWarning)
+                    {
+                        fleet.Filter(fleet.GetAll());
                     }
                     Console.WriteLine($"Choice control step {i + 1} \n 1. fly \n 2. sendFuel");
                     var choice = Console.ReadLine();
@@ -33,18 +43,25 @@ namespace System
                         var choiceWich = Console.ReadLine();
                         foreach (var item in fleet.GetAll())
                         {
-                            if(item.Name == choiceWich && item.Fuel != 0)
-                            {
-                                Console.WriteLine("Choice type SendRefuel \n 1. Full \n 2. fixed 30");
-                                var choiceHowSendFuel = Console.ReadLine();
-                                switch (choiceHowSendFuel)
+                            if(item.Name == choiceWich)
+                            { 
+                                if(item.Fuel != 0)
                                 {
-                                    case "1": 
-                                        item.Fuel = SendRefuel(item, topUp);
-                                    ; break;
-                                    case "2": 
-                                        item.Fuel += SendRefuel(item, fixed30);
-                                    ; break;
+                                    Console.WriteLine("Choice type SendRefuel \n 1. Full \n 2. fixed 30");
+                                    var choiceHowSendFuel = Console.ReadLine();
+                                    switch (choiceHowSendFuel)
+                                    {
+                                        case "1": 
+                                            item.Fuel = SendRefuel(item, topUp);
+                                        ; break;
+                                        case "2": 
+                                            item.Fuel += SendRefuel(item, fixed30);
+                                        ; break;
+                                    }
+                                } else
+                                {
+                                  Console.WriteLine($"Satellite status: {item.Status}");
+                                  Console.ReadKey();
                                 }
                             }
                         }

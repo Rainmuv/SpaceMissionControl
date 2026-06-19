@@ -9,8 +9,14 @@ namespace System
             set
             {
                 field = value;
+                Status = "Active";
+                if(field <= 20)
+                {
+                    Status = "LowFuel";
+                }
                 if(field < 0)
                 {
+                    Status = "Lost";
                     field = 0;
                 }
             }
@@ -23,22 +29,20 @@ namespace System
         {
             this.Name = Name;
             this.Target = Target;
-            this.Fuel = Fuel;        
+            this.Fuel = Fuel;
+            if(Fuel == 0)
+            {
+                Status = "Lost";
+            } else if(Fuel <= 20)
+            {
+                Status = "LowFuel";
+            }
             StatusChanged?.Invoke(this);    
         }
 
         public void Fly()
         {   
             Fuel -= 5;
-            if(Fuel <= 20)
-            {
-                Status = "LowFuel";
-            }
-            if(Fuel == 0)
-            {
-
-                Status = "Lost";
-            }   
             StatusChanged?.Invoke(this);
         }
     }

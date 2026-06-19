@@ -9,19 +9,25 @@ namespace System
             set
             {
                 field = value;
-                Status = "Active";
+                Status = ProbeStatus.Active;
                 if(field <= 20)
                 {
-                    Status = "LowFuel";
+                    Status = ProbeStatus.LowFuel;
                 }
                 if(field < 0)
                 {
-                    Status = "Lost";
+                    Status = ProbeStatus.Lost;
                     field = 0;
                 }
             }
         }
-        public string Status {get; set;} = "Active";
+        public ProbeStatus Status {get; set;} = ProbeStatus.Active;
+        public enum ProbeStatus
+        {
+            Active,
+            LowFuel,
+            Lost
+        }
         public delegate void EventStatus(Probe item);
         public event EventStatus? StatusChanged;
 
@@ -32,17 +38,17 @@ namespace System
             this.Fuel = Fuel;
             if(Fuel == 0)
             {
-                Status = "Lost";
+                Status = ProbeStatus.Lost;
             } else if(Fuel <= 20)
             {
-                Status = "LowFuel";
+                Status = ProbeStatus.LowFuel;
             }
-            StatusChanged?.Invoke(this);    
         }
 
         public void Fly()
         {   
-            Fuel -= 5;
+            if (Status == ProbeStatus.Lost) return;
+            Fuel -= 15;
             StatusChanged?.Invoke(this);
         }
     }

@@ -25,6 +25,6 @@ class Program
         }
         
         startMission.Run(ref fleet, topUp, fixed30);
-        // logger.Cons();
+        logger.Cons();
     }
 }

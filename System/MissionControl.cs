@@ -18,14 +18,14 @@ namespace System
                     foreach (var item in fleet.GetAll())
                     {
                         Console.WriteLine($"{item.Name} - Fuel: {item.Fuel}");
-                        if(item.Status == "LowFuel")
+                        if(item.Status == Probe.ProbeStatus.LowFuel)
                         {
                             statusWarning = true;
                         }
                     }
                     if(statusWarning)
                     {
-                        fleet.Filter(fleet.GetAll());
+                        fleet.Filter();
                     }
                     Console.WriteLine($"Choice control step {i + 1} \n 1. fly \n 2. sendFuel");
                     var choice = Console.ReadLine();
@@ -52,7 +52,7 @@ namespace System
                                     switch (choiceHowSendFuel)
                                     {
                                         case "1": 
-                                            item.Fuel = SendRefuel(item, topUp);
+                                            item.Fuel += SendRefuel(item, topUp);
                                         ; break;
                                         case "2": 
                                             item.Fuel += SendRefuel(item, fixed30);

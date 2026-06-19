@@ -4,7 +4,7 @@ namespace System
     {
         public void OnStatusChanged(Probe item)
         {
-            if(item.Status == "Lost")
+            if(item.Status == Probe.ProbeStatus.Lost)
             {
                 Console.WriteLine($"Ahtung! {item.Name}");
                 Console.ReadKey();
